@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>home, board</title>
+		<link rel="stylesheet" href="/assets/style.css">
+	</head>
+	<body>
+		<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+		<div class="topnav">
+			<a id="home" href="/"><b>board</b></a>
+		</div>
+		<div class="main">
+			<h3>Post - {{ .post.Id }}</h3>
+			<div class="post">
+				<div class="info">
+					<span class="id">>>{{ .post.Id }}</span> at
+					<span class="date">{{ .post.TimeString }}</span>, from
+					<span class="country">{{ .post.Country }}</span>
+				</div>
+				<p class="body">{{ .post.Body }}</p>
+
+				<div class="reply-section">
+					<form id="comment" action="/comment/{{ .post.Id }}" method="post">
+						<input type="text" name="body" placeholder="comment">
+						<input type="submit" name="submit" value="comment">
+					</form>
+					{{ range $comment_id, $comment := .post.Comments }}
+						<div class="reply">
+							<div class="info">
+								<span class="id">>>{{ $comment.Id }}</span> at
+								<span class="date">{{ $comment.TimeString }}</span>, from
+								<span class="country">{{ $comment.Country }}</span>
+							</div>
+							<p class="body">{{ $comment.Body }}</p>
+						</div>
+					{{ end }}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -8,6 +8,10 @@ body {
 	background-color: #383838;
 }
 
+textarea {
+	padding: 10px;
+}
+
 .topnav {
 	overflow: hidden;
 	background-color: #333;
@@ -25,6 +29,17 @@ body {
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
+}
+
+.topnav input {
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	box-sizing: border-box;
+	margin: 8px 0;
 }
 
 .topnav a:hover {
@@ -55,6 +70,16 @@ body {
 	margin: 5px;
 }
 
+.main .post .info .id {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.main .post .reply-section .reply .id {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 .main .post .body {
 	color: #eee;
 }
@@ -67,4 +92,9 @@ body {
 	padding-bottom: 5px;
 
 	margin: 3px;
+}
+
+.main a {
+	text-decoration: none;
+	color: white;
 }
