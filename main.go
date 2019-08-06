@@ -2,7 +2,7 @@
 package main
 
 import (
-	"fmt"
+	_ "fmt"
 
 	"net/http"
 
@@ -37,8 +37,6 @@ type Post struct {
 func main() {
 	posts := make([]Post, 0)
 	var id int = 0
-
-	fmt.Println("Starting polambert.com.")
 
 	router := gin.Default()
 
